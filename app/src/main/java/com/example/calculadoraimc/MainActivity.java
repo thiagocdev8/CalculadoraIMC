@@ -5,6 +5,7 @@ import android.view.View;
 import android.widget.EditText;
 import android.widget.SeekBar;
 import android.widget.Button;
+import android.widget.TextView;
 import androidx.activity.EdgeToEdge;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.core.graphics.Insets;
@@ -28,6 +29,7 @@ public class MainActivity extends AppCompatActivity {
         SeekBar seekBarHeight = findViewById(R.id.seekbar_height);
         Button buttonClear = findViewById(R.id.button_clear);
         Button buttonCalculate = findViewById(R.id.button_calculate);
+        TextView textViewHeight = findViewById(R.id.textview_height);
 
         buttonClear.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -35,6 +37,19 @@ public class MainActivity extends AppCompatActivity {
                 editTextWeight.setText("");
                 seekBarHeight.setProgress(0);
             }
+        });
+
+        seekBarHeight.setOnSeekBarChangeListener(new SeekBar.OnSeekBarChangeListener() {
+            @Override
+            public void onProgressChanged(SeekBar seekBar, int progress, boolean fromUser) {
+                textViewHeight.setText(progress + " cm");
+            }
+
+            @Override
+            public void onStartTrackingTouch(SeekBar seekBar) {}
+
+            @Override
+            public void onStopTrackingTouch(SeekBar seekBar) {}
         });
 
 
