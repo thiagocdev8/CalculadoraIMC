@@ -65,14 +65,14 @@
 
     <Button
         android:id="@+id/button_clear"
-        android:textSize="22sp"
-        android:backgroundTint="#55BA"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginBottom="140dp"
+        android:backgroundTint="#FF69B4"
         android:paddingLeft="48dp"
         android:paddingRight="48dp"
         android:text="Limpar"
+        android:textSize="22sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toLeftOf="@+id/button_calculate" />
@@ -82,11 +82,11 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginBottom="140dp"
-        android:textSize="22sp"
-        android:backgroundTint="#55BA"
+        android:backgroundTint="#FF69B4"
         android:paddingLeft="48dp"
         android:paddingRight="48dp"
         android:text="Calcular"
+        android:textSize="22sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintLeft_toRightOf="@+id/button_clear"
         app:layout_constraintRight_toRightOf="parent" />
