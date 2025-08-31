@@ -6,6 +6,8 @@ import android.widget.EditText;
 import android.widget.SeekBar;
 import android.widget.Button;
 import android.widget.TextView;
+import android.widget.Toast;
+
 import androidx.activity.EdgeToEdge;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.core.graphics.Insets;
@@ -49,14 +51,23 @@ public class MainActivity extends AppCompatActivity {
         buttonCalculate.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                String weightText = editTextWeight.getText().toString();
-                double height = (double)seekBarHeight.getProgress() / 100; // /100 to convert from cm to m
+                try{
+                    String weightText = editTextWeight.getText().toString();
+                    double height = (double)seekBarHeight.getProgress() / 100; // /100 to convert from cm to m
 
-                double weight = Double.parseDouble(weightText);
+                    if(height <= 0){
+                        Toast.makeText(getApplicationContext(), R.string.validation_msg_height, Toast.LENGTH_SHORT).show();
+                    } else {
+                        double weight = Double.parseDouble(weightText);
 
-                // IMC : weight / (height * height) in meter
-                double result = weight / (height * height);
-                textViewResult.setText(String.format(Locale.getDefault(), "IMC: %.2f", result));
+                        // IMC : weight / (height * height) in meter
+                        double result = weight / (height * height);
+                        textViewResult.setText(String.format(Locale.getDefault(), "IMC: %.2f", result));
+                    }
+                }
+                catch (Exception e){
+                    Toast.makeText(getApplicationContext(), R.string.validation_msg_weight, Toast.LENGTH_SHORT).show();
+                }
                 textViewResult.setVisibility(View.VISIBLE);
             }
         });
