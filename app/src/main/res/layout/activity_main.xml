@@ -58,10 +58,25 @@
         android:layout_marginTop="16dp"
         android:layout_marginRight="16dp"
         android:backgroundTint="@color/white"
+        android:max="260"
+        android:min="0"
         android:progressBackgroundTint="@color/white"
+        android:progressTint="@color/white"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/textview_label_height" />
+
+    <TextView
+        android:id="@+id/textview_height"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="16dp"
+        android:gravity="center"
+        android:text="180 cm"
+        android:textColor="@color/white"
+        app:layout_constraintBottom_toTopOf="@id/seekbar_height"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent" />
 
     <Button
         android:id="@+id/button_clear"
