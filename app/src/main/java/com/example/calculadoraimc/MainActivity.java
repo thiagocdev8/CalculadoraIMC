@@ -41,6 +41,8 @@ public class MainActivity extends AppCompatActivity {
                 editTextWeight.setText("");
                 seekBarHeight.setProgress(0);
                 textViewResult.setText("");
+                textViewResult.setVisibility(View.GONE);
+                textViewHeight.setVisibility(View.GONE);
             }
         });
 
@@ -55,6 +57,7 @@ public class MainActivity extends AppCompatActivity {
                 // IMC : weight / (height * height) in meter
                 double result = weight / (height * height);
                 textViewResult.setText(String.format(Locale.getDefault(), "IMC: %.2f", result));
+                textViewResult.setVisibility(View.VISIBLE);
             }
         });
 
@@ -62,6 +65,7 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onProgressChanged(SeekBar seekBar, int progress, boolean fromUser) {
                 textViewHeight.setText(progress + " cm");
+                textViewHeight.setVisibility(View.VISIBLE);
             }
 
             @Override
