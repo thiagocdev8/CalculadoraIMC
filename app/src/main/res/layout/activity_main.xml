@@ -3,19 +3,20 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/main"
-    android:background="@drawable/background"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@drawable/background"
     tools:context=".MainActivity">
 
     <TextView
         android:id="@+id/textview_title"
         android:layout_width="0dp"
-
         android:layout_height="wrap_content"
         android:layout_marginTop="64dp"
         android:gravity="center"
         android:text="Calculadora IMC"
+        android:textColor="@color/white"
+        android:textSize="48sp"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
@@ -27,7 +28,11 @@
         android:layout_marginLeft="16dp"
         android:layout_marginTop="64dp"
         android:layout_marginRight="16dp"
+        android:backgroundTint="@color/white"
         android:hint="Peso"
+        android:textColor="@color/white"
+        android:textColorHint="@color/white"
+        android:textSize="20sp"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/textview_title" />
@@ -37,10 +42,13 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="16dp"
-        android:layout_marginTop="16dp"
-        android:text="altura (cm)"
+        android:layout_marginTop="32dp"
+        android:text="Altura (cm)"
+        android:textColor="@color/white"
+        android:textSize="20sp"
         app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/edittext_weight" />
+        app:layout_constraintTop_toBottomOf="@+id/edittext_weight"
+        app:layout_goneMarginTop="32dp" />
 
     <SeekBar
         android:id="@+id/seekbar_height"
@@ -49,12 +57,16 @@
         android:layout_marginStart="16dp"
         android:layout_marginTop="16dp"
         android:layout_marginRight="16dp"
+        android:backgroundTint="@color/white"
+        android:progressBackgroundTint="@color/white"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/textview_label_height" />
 
     <Button
         android:id="@+id/button_clear"
+        android:textSize="22sp"
+        android:backgroundTint="#55BA"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginBottom="140dp"
@@ -70,6 +82,8 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginBottom="140dp"
+        android:textSize="22sp"
+        android:backgroundTint="#55BA"
         android:paddingLeft="48dp"
         android:paddingRight="48dp"
         android:text="Calcular"
@@ -79,12 +93,12 @@
 
     <View
         android:id="@+id/wave"
+        android:layout_width="0dp"
+        android:layout_height="140dp"
         android:background="@drawable/wave"
         android:backgroundTint="#2AD57A"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintRight_toRightOf="parent"
-        android:layout_width="0dp"
-        android:layout_height="140dp"/>
+        app:layout_constraintRight_toRightOf="parent" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
