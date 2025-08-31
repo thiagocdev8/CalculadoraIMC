@@ -12,6 +12,8 @@ import androidx.core.graphics.Insets;
 import androidx.core.view.ViewCompat;
 import androidx.core.view.WindowInsetsCompat;
 
+import java.util.Locale;
+
 public class MainActivity extends AppCompatActivity {
 
     @Override
@@ -51,10 +53,8 @@ public class MainActivity extends AppCompatActivity {
                 double weight = Double.parseDouble(weightText);
 
                 // IMC : weight / (height * height) in meter
-
                 double result = weight / (height * height);
-
-                textViewResult.setText("IMC: " + result);
+                textViewResult.setText(String.format(Locale.getDefault(), "IMC: %.2f", result));
             }
         });
 
